@@ -9,17 +9,20 @@ list1 = [9,0,4,0,1,0,0,0,0,7,0,0,5]
 length = len(list1)
 c = 0
 i = 0
+zerosInRow = 0
 
 while i < (length - 1):
     c = c + 1
     print('cycle : ' + str(c))
 
     if list1[i] == 0:
-        j = i
+        j = i - zerosInRow -1
+        zerosInRow = 0
         print(' initial i ' + str(i))
         print(' initial j ' + str(j))
         while i < (length - 1) and (list1[i] == 0):
             i = i + 1
+            zerosInRow = zerosInRow + 1
             print(' i inside while loop : '+ str(i))
         print(' After while loop j  ' + str(j))
         temp = list1[j]
@@ -28,6 +31,7 @@ while i < (length - 1):
        
         list1[j] = list1[i]
         list1[i] = temp
+        #i = j
         print(list1)
         print('====================================')
     else:
