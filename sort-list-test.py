@@ -24,7 +24,7 @@ while i < (length - 1):
         j = j + 1
         
     else:
-        print(' Inside nested while loop : ' + str(i))
+        print(' Inside external while loop : ' + str(i))
         i = i + 1
         j = j + 1
 
